@@ -60,7 +60,7 @@ html {
 	margin-bottom: 13px;
 	font-weight: 400;
 	text-transform: uppercase;
-	font-size: 20.04px;
+	font-size: 20px;
 	color: $main-color;
 }
 
@@ -70,13 +70,29 @@ html {
 	margin-bottom: 20px;
 	font-weight: 300;
 	text-transform: uppercase;
-	font-size: 18.3px;
+	font-size: 17.3px;
 }
 
 .myphoto {
 	height: 165px;
 	width: 165px;
 	border-radius: 50%;
+	animation: pulse 3s cubic-bezier(0.25,-0.06, 0.18, 0.63) infinite;
+
+	@keyframes pulse {
+		0% {
+			box-shadow: 0 0 0 0 hsla(188, 46%, 65%, 0.0), 0 0 0 0 hsla(188, 46%, 65%, 0.0);
+		}
+		40% {
+			box-shadow: 0 0 0 0 hsla(188, 46%, 65%, 0.8), 0 0 0 0 hsla(188, 46%, 65%, 0.7);
+		}
+		80% {
+			box-shadow: 0 0 10px 15px hsla(188, 46%, 65%, 0), 0 0 10px 4px hsla(188, 46%, 65%, 0);
+		}
+		100% {
+			box-shadow: 0 0 10px 15px hsla(188, 46%, 65%, 0), 0 0 0 0 hsla(188, 46%, 65%, 0);
+		}
+	}
 }
 
 .menu-name {
@@ -91,6 +107,7 @@ html {
 }
 
 .social-media {
+	display: flex;
 	font-size: 20px;
 	a {
 		color: #fff;
@@ -127,7 +144,6 @@ nav {
 	}
 }
 
-
 .footer {
 	font-size: 7px;
 	text-align: center;
@@ -147,12 +163,29 @@ nav {
 	justify-content: center;
 }
 
+// Home
 .home-right {
 	display: flex;
 	height: 100%;
 	align-items: center;
     flex-direction: column;
     justify-content: center;
+
+	.name-span {
+		display: flex;
+		padding-bottom: 13px;
+	}
+
+	.letter {
+		font-weight: 400;
+		font-size: 35px;
+		color: white;
+	}
+
+	.letter:hover {
+		color: $main-color;
+		// cursor: default;
+	}
 }
 
 .name-right-box {
@@ -170,7 +203,7 @@ nav {
 	margin-bottom: 0px;
 	font-weight: 300;
 	text-transform: uppercase;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 // O mnie

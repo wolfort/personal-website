@@ -7,8 +7,8 @@ export default function AboutMe(year) {
         to: { opacity: 1 }
         })
 
-    const languages = ["HTML", "CSS", "JavaScript", "C#", "Python", "PHP"];
-    const programs = ["Adobe Photoshop", "Discord", "Adobe Premiere", "OBS", "Adobe After Effects"];
+    const languages = ["HTML", "CSS", "Sass", "JavaScript", "React.js", "C#", "Python", "PHP"];
+    const programs = ["Adobe Photoshop", "Discord", "vMix", "Adobe Premiere", "OBS", "Adobe After Effects"];
 
     return (
         <animated.div style={props}>
@@ -39,15 +39,33 @@ export default function AboutMe(year) {
                         <div className="skillbox">
                             <div className="skillbox-top">
                                 <div>{languages[0]}</div>
-                                <div>70%</div>
+                                <div>85%</div>
                             </div>
                             <div className="skill">
-                                <div className="skill-level" style={{ width: '70%' }}></div>
+                                <div className="skill-level" style={{ width: '85%' }}></div>
                             </div>
                         </div>
                         <div className="skillbox">
                             <div className="skillbox-top">
                                 <div>{languages[1]}</div>
+                                <div>80%</div>
+                            </div>
+                            <div className="skill">
+                                <div className="skill-level" style={{ width: '80%' }}></div>
+                            </div>
+                        </div>
+                        <div className="skillbox">
+                            <div className="skillbox-top">
+                                <div>{languages[2]}</div>
+                                <div>80%</div>
+                            </div>
+                            <div className="skill">
+                                <div className="skill-level" style={{ width: '80%' }}></div>
+                            </div>
+                        </div>
+                        <div className="skillbox">
+                            <div className="skillbox-top">
+                                <div>{languages[3]}</div>
                                 <div>60%</div>
                             </div>
                             <div className="skill">
@@ -56,7 +74,25 @@ export default function AboutMe(year) {
                         </div>
                         <div className="skillbox">
                             <div className="skillbox-top">
-                                <div>{languages[2]}</div>
+                                <div>{languages[4]}</div>
+                                <div>60%</div>
+                            </div>
+                            <div className="skill">
+                                <div className="skill-level" style={{ width: '60%' }}></div>
+                            </div>
+                        </div>
+                        <div className="skillbox">
+                            <div className="skillbox-top">
+                                <div>{languages[5]}</div>
+                                <div>45%</div>
+                            </div>
+                            <div className="skill">
+                                <div className="skill-level" style={{ width: '45%' }}></div>
+                            </div>
+                        </div>
+                        <div className="skillbox">
+                            <div className="skillbox-top">
+                                <div>{languages[6]}</div>
                                 <div>25%</div>
                             </div>
                             <div className="skill">
@@ -65,25 +101,7 @@ export default function AboutMe(year) {
                         </div>
                         <div className="skillbox">
                             <div className="skillbox-top">
-                                <div>{languages[3]}</div>
-                                <div>20%</div>
-                            </div>
-                            <div className="skill">
-                                <div className="skill-level" style={{ width: '20%' }}></div>
-                            </div>
-                        </div>
-                        <div className="skillbox">
-                            <div className="skillbox-top">
-                                <div>{languages[4]}</div>
-                                <div>20%</div>
-                            </div>
-                            <div className="skill">
-                                <div className="skill-level" style={{ width: '20%' }}></div>
-                            </div>
-                        </div>
-                        <div className="skillbox">
-                            <div className="skillbox-top">
-                                <div>{languages[5]}</div>
+                                <div>{languages[7]}</div>
                                 <div>20%</div>
                             </div>
                             <div className="skill">
@@ -116,10 +134,10 @@ export default function AboutMe(year) {
                         <div className="skillbox">
                             <div className="skillbox-top">
                                 <div>{programs[2]}</div>
-                                <div>70%</div>
+                                <div>75%</div>
                             </div>
                             <div className="skill">
-                                <div className="skill-level" style={{ width: '70%' }}></div>
+                                <div className="skill-level" style={{ width: '75%' }}></div>
                             </div>
                         </div>
                         <div className="skillbox">
@@ -134,6 +152,15 @@ export default function AboutMe(year) {
                         <div className="skillbox">
                             <div className="skillbox-top">
                                 <div>{programs[4]}</div>
+                                <div>70%</div>
+                            </div>
+                            <div className="skill">
+                                <div className="skill-level" style={{ width: '70%' }}></div>
+                            </div>
+                        </div>
+                        <div className="skillbox">
+                            <div className="skillbox-top">
+                                <div>{programs[5]}</div>
                                 <div>65%</div>
                             </div>
                             <div className="skill">

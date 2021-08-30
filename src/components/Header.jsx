@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function Header({ setPage_number, year }) {
     return (
@@ -6,13 +7,26 @@ export default function Header({ setPage_number, year }) {
         <div className="name-photo">
             <img src="assets/photo.jpg" alt="avatar" className="myphoto"></img>
             <h1 className="myname">Sebastian Wilczyński</h1>
-            <h2 className="mydesc">Web Designer</h2>
+            <h2 className="mydesc">Junior Frontend Developer</h2>
 
             <div className="social-media">
-                <a href="https://www.facebook.com/wolfortcs"><i className="fab fa-facebook-f main"></i></a>
-                <a href="https://twitter.com/wolfortcs"><i className="fab fa-twitter main"></i></a>
-                <a href="https://www.linkedin.com/in/sebastian-wilczy%C5%84ski-65b644155/"><i className="fab fa-linkedin-in main"></i></a>
-                <a href="https://www.instagram.com/wolfortcs_/"><i className="fab fa-instagram main-insta"></i></a>
+                <motion.div
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ type: "spring", bounce: 0.03, damping: 11, delay: 0.7 }}
+                    initial={{ x: -100, opacity: 0 }}
+                >
+                    <a href="https://github.com/wolfort"><i className="fab fa-github bounce"></i></a>
+                </motion.div>
+                <motion.div
+                    animate={{ x: [0,18,0] }}
+                    transition={{ type: "spring", bounce: 0.30, delay: 1.0 }}
+                    initial={{ x: 0 }}
+                >
+                    <a href="https://www.facebook.com/wolfortcs"><i className="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/wolfortcs"><i className="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/sebastian-wilczy%C5%84ski-65b644155/"><i className="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/wolfortcs_/"><i className="fab fa-instagram"></i></a>
+                </motion.div>
             </div>
 
         </div>

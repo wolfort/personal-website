@@ -1,0 +1,277 @@
+// Podstawa
+$main-color: #7EC4CF;
+
+html {
+	body {
+		margin: 0;
+		background-image: linear-gradient(120deg,#3498db,#8e44ad);
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+		letter-spacing: 3px;
+		color: #fff;
+	}
+}
+
+.container {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $main-color;
+}
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+// Główny box
+.main-box {
+	width: 1335px;
+	height: 700px;
+	border-radius: 50px;
+	background: #201e1f;
+	overflow: hidden;
+	box-shadow: 0px 10px 40px -5px rgba(0,0,0,0.75);
+	display: flex;
+}
+
+// Lewy box
+.left-box {
+	background: #312e2f;
+	flex-basis: 30%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.name-photo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 40px;
+}
+
+.myname {
+	text-align: center;
+	margin-top: 24px;
+	margin-bottom: 13px;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 20.04px;
+	color: $main-color;
+}
+
+.mydesc {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 18.3px;
+}
+
+.myphoto {
+	height: 165px;
+	width: 165px;
+	border-radius: 50%;
+}
+
+.menu-name {
+	color: $main-color;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 32.43px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 15px;
+}
+
+.social-media {
+	font-size: 20px;
+	a {
+		color: #fff;
+		padding-left: 5px;
+		padding-right: 5px;
+		&:hover {
+			color: $main-color;
+		}
+	}
+}
+
+.main-li {
+	list-style: none;
+	text-align: center;
+	padding-left: 0;
+}
+nav {
+	li {
+		padding-bottom: 15px;
+		padding-top: 15px;
+		&:first-child {
+			padding-top: 7px;
+		}
+	}
+	a {
+		color: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 19.17px;
+		font-weight: 300;
+	}
+	ul {
+		margin: 0;
+	}
+}
+
+
+.footer {
+	font-size: 7px;
+	text-align: center;
+	text-transform: uppercase;
+	h2 {
+		font-weight: 300;
+	}
+}
+
+// Prawy box
+.right-box {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	flex-basis: 70%;
+    height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.home-right {
+	display: flex;
+	height: 100%;
+	align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name-right-box {
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 13px;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 35px;
+}
+
+.desc-right-box {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0px;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 25px;
+}
+
+// O mnie
+
+.about-me-right-box {
+	display: flex;
+	flex-direction: column;
+	h2 {
+		padding-left: 60px;
+		font-weight: 400;
+		font-size: 32.43px;
+		margin: 0 0;
+		text-transform: uppercase;
+	}
+	padding-top: 40px;
+}
+
+.about-me-1 {
+	font-size: 18.3px;
+	font-weight: 300;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	letter-spacing: 0px;
+	display: flex;
+	line-height: 1.5;
+	padding-left: 60px;
+	padding-right: 60px;
+
+	.about-me-box {
+		flex: 1;
+		&:first-child {
+			padding-right: 30px;
+		}
+		&:last-child {
+			padding-left: 30px;
+			
+		}
+		p {
+			margin: 0;
+		}
+	}
+	
+	.info-right-box {
+		display: flex;
+		flex-direction: column;
+    	justify-content: space-between;
+	}
+}
+
+.main-color {
+	color: $main-color;
+}
+
+.skill-box-name {
+	display: flex;
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 5px;
+}
+
+.skill-bar {
+	padding-left: 60px;
+	flex: 1;
+	&:first-child {
+		padding-left: 60px;
+	}
+	&:last-child {
+		padding-left: 60px;
+		padding-right: 60px;
+		
+	}
+}
+
+.skillbox {
+	padding-bottom: 30px;
+}
+
+.skillbox-top {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+.skill {
+	background: #201e1f;
+	padding: 4px;
+	box-sizing: border-box;
+	border: 1px solid #7EC4CF;
+	border-radius: 100px;
+}
+.skill-level {
+	background: #7EC4CF;
+	width: 100%;
+	height: 7px;
+	border-radius: 100px;
+	animation: progressBar1 2s ease;
+
+	@keyframes progressBar1 {
+		0% {
+			width: 0%;
+		}
+	}
+}

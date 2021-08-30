@@ -8,34 +8,36 @@ import "./app.scss";
 
 function App() {
 
-  // ustawienie numeru strony
-    let [page_number, setPage_number] = useState("1");
-    var d = new Date();
-    const year = d.getFullYear();
+// ustawienie numeru strony
+let [page_number, setPage_number] = useState("1");
 
-    return (
-        <div className="app">
-            {/* Główny blok */}
-            <div className="container">
-                <div className="main-box">
-                    {/* Ładowanie header'a */}
-                    <Header 
-                        setPage_number={setPage_number}
-                        year={year}
-                    />
+// oblicza rok
+var d = new Date();
+const year = d.getFullYear();
 
-                    <div className="right-box">
-                    {/* Załadowanie strony */}
-                    {page_number == 1 && <Home/>}
-                    {page_number == 2 && <AboutMe
-                        year={year}
-                    />}
-                    {page_number == 3 && <Portfolio/>}
-                    </div>
-                </div>
-            </div>
+return (
+  <div className="app">
+    {/* Główny blok */}
+    <div className="container">
+      <div className="box">
+          {/* Ładowanie header'a */}
+          <Header 
+              setPage_number={setPage_number}
+              year={year}
+          />
+
+        <div className="right-box">
+          {/* Załadowanie strony */}
+          {page_number == 1 && <Home/>}
+          {page_number == 2 && <AboutMe
+              year={year}
+          />}
+          {page_number == 3 && <Portfolio/>}
         </div>
-    );
+      </div>
+    </div>
+  </div>
+);
 }
 
 export default App;

@@ -36,8 +36,6 @@ html {
 
 // Główny box
 .box {
-	width: 1335px;
-	height: 700px;
 	border-radius: 50px;
 	background: #201e1f;
 	overflow: hidden;
@@ -48,8 +46,8 @@ html {
 // Lewy box
 .left-box {
 	background: #312e2f;
-	flex-basis: 30%;
-	height: 100%;
+	height: 700px;
+	width: 400px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -186,10 +184,27 @@ nav {
 	background-color: #201e1f;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	flex-basis: 70%;
-    height: 100%;
+    height: 700px;
 	display: flex;
 	justify-content: center;
+	padding-right: 0px;
+	width: 0px;
+}
+
+.animation-right-box {
+	width: 100%;
+	display: flex;
+	opacity: 0;
+}
+
+.close-arrow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	overflow-y: scroll;
+	font-size: 34px;
+	margin-right: 15px;
 }
 
 // Home
@@ -213,7 +228,6 @@ nav {
 
 	.letter:hover {
 		color: $main-color;
-		// cursor: default;
 	}
 }
 
@@ -224,6 +238,9 @@ nav {
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 35px;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
 }
 
 .desc-right-box {
@@ -252,7 +269,7 @@ nav {
 	display: flex;
 	line-height: 1.5;
 	padding-left: 60px;
-	padding-right: 60px;
+	padding-right: 35px;
 
 	.about-me-box {
 		flex: 1;
@@ -294,7 +311,7 @@ nav {
 	}
 	&:last-child {
 		padding-left: 60px;
-		padding-right: 60px;
+		padding-right: 35px;
 		
 	}
 }
@@ -347,13 +364,8 @@ nav {
 
 .portfolio-box {
 	display: flex;
-	// align-items: center;
 	flex-direction: column;
-	// height: 60px;
 	padding: 15px;
-	// border-radius: 100px;
-	// margin-left: 60px;
-	// margin-right: 60px;
 	margin-top: 30px;
 	background-color: #312e2f;
 }
@@ -425,5 +437,88 @@ nav {
 	&:hover {
 		background-color: #0092af;
 		color: white;
+	}
+}
+
+// Wersja mobilna
+@media (max-width: 600px) {
+	.container {
+		align-items: stretch;
+		justify-content: left;
+		height: 100%;
+	}
+
+	.box { 
+		border-radius: 0px;
+	}
+
+	.left-box {
+		height: 100%;
+		width: 100%;
+		border-radius: 0px;
+		position: absolute;
+	}
+
+	.right-box {
+		width: 100%;
+		height: 100%;
+		.animation-right-box {
+			width: 100%;
+		}
+	}
+
+	.name-span {
+		opacity: 0;
+		position: absolute;
+	}
+
+	.name-right-box {
+		position: static;
+		opacity: 1;
+		z-index: auto;
+	}
+
+	.close-arrow {
+		display: block;
+		position: absolute;
+		right: 10px;
+		top: 20px;
+		width: 100%;
+	}
+	.about-me-right-box {
+		padding-top: 80px;
+		padding-left: 20px;
+		padding-right: 20px;
+		.tittle {
+			padding-left: 0px;
+		}
+
+		.about-me-1 {
+			padding-right: 0px;
+			padding-left: 0px;
+			flex-direction: column;
+
+			.about-me-box {
+				padding-right: 0px;
+			}
+		}
+
+		.about-me-box:last-child {
+			padding-top: 30px;
+			padding-left: 0px;
+		}
+	}
+
+	.skill-box {
+		flex-direction: column;
+
+		.skill {
+			padding-left: 0px;
+			padding-right: 0px;
+
+			&:last-child {
+				padding-top: 40px;
+			}
+		}
 	}
 }

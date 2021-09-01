@@ -35,7 +35,7 @@ export default function Home() {
                         <motion.div whileHover={{ scale: 1.2 }} className="letter">K</motion.div>
                         <motion.div whileHover={{ scale: 1.2 }} className="letter">I</motion.div>
                     </motion.div>
-                        {/* <h2 className="name-right-box">Sebastian Wilczyński</h2> */}
+                        <h2 className="name-right-box">Sebastian Wilczyński</h2>
                         <motion.h3 className="desc-right-box">Junior Frontend Developer</motion.h3>
                 </div>
             </animated.div>

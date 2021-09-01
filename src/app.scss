@@ -1,5 +1,5 @@
 // Podstawa
-$main-color: #7EC4CF;
+$main-color: #00b4d8;
 
 html {
 	body {
@@ -26,12 +26,20 @@ html {
 	width: 5px;
 }
 
+.tittle {
+	padding-left: 60px;
+	font-weight: 400;
+	font-size: 32.43px;
+	margin: 0 0;
+	text-transform: uppercase;
+}
+
 // Główny box
 .box {
 	width: 1335px;
 	height: 700px;
 	border-radius: 50px;
-	// background: #201e1f;
+	background: #201e1f;
 	overflow: hidden;
 	box-shadow: 0px 10px 40px -5px rgba(0,0,0,0.75);
 	display: flex;
@@ -45,6 +53,7 @@ html {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	border-radius: 50px;
 }
 
 .name-photo {
@@ -73,25 +82,44 @@ html {
 	font-size: 17.3px;
 }
 
-.myphoto {
-	height: 165px;
-	width: 165px;
-	border-radius: 50%;
-	animation: pulse 3s cubic-bezier(0.25,-0.06, 0.18, 0.63) infinite;
+.animated-border {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 172px;
+	width: 172px;
+	
+	&::before {
+		content: "";
+		height: 174px;
+		width: 174px;
+		border-radius: 50%;
+		position: absolute;
+		opacity: 0;
+		background-image: conic-gradient(
+			$main-color 20deg,
+			transparent 150deg
+		);
+		animation: rotate 2s infinite linear 2.2s, fade 2s forwards ease 2s;
+		@keyframes fade {
+			100% {
+				opacity: 1;
+			}
+		}
+		@keyframes rotate {
+			100% {
+				transform: rotate(-360deg);
+			}
+		}
+	}
 
-	@keyframes pulse {
-		0% {
-			box-shadow: 0 0 0 0 hsla(188, 46%, 65%, 0.0), 0 0 0 0 hsla(188, 46%, 65%, 0.0);
-		}
-		40% {
-			box-shadow: 0 0 0 0 hsla(188, 46%, 65%, 0.8), 0 0 0 0 hsla(188, 46%, 65%, 0.7);
-		}
-		80% {
-			box-shadow: 0 0 10px 15px hsla(188, 46%, 65%, 0), 0 0 10px 4px hsla(188, 46%, 65%, 0);
-		}
-		100% {
-			box-shadow: 0 0 10px 15px hsla(188, 46%, 65%, 0), 0 0 0 0 hsla(188, 46%, 65%, 0);
-		}
+	&::after {
+		content: "";
+		position: absolute;
+		border-radius: 50%;
+		width: 165px;
+		height: 165px;
+		background-image: url('https://i.imgur.com/itGmIUZ.png');
 	}
 }
 
@@ -212,13 +240,6 @@ nav {
 .about-me-right-box {
 	display: flex;
 	flex-direction: column;
-	h2 {
-		padding-left: 60px;
-		font-weight: 400;
-		font-size: 32.43px;
-		margin: 0 0;
-		text-transform: uppercase;
-	}
 	padding-top: 40px;
 }
 
@@ -293,11 +314,11 @@ nav {
 	background: #201e1f;
 	padding: 4px;
 	box-sizing: border-box;
-	border: 1px solid #7EC4CF;
+	border: 1px solid $main-color;
 	border-radius: 100px;
 }
 .skill-level {
-	background: #7EC4CF;
+	background: $main-color;
 	width: 100%;
 	height: 7px;
 	border-radius: 100px;
@@ -307,5 +328,102 @@ nav {
 		0% {
 			width: 0%;
 		}
+	}
+}
+
+// Portfolio
+.portfolio-right-box {
+	display: flex;
+	flex-direction: column;
+	padding-top: 40px;
+}
+
+.portfolio-list {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+.portfolio-box {
+	display: flex;
+	// align-items: center;
+	flex-direction: column;
+	// height: 60px;
+	padding: 15px;
+	// border-radius: 100px;
+	// margin-left: 60px;
+	// margin-right: 60px;
+	margin-top: 30px;
+	background-color: #312e2f;
+}
+
+.portfolio-box-top {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.portfolio-box-bottom {
+	display: flex;
+	flex-direction: row;
+	margin-top: 35px;
+	margin-left: 15px;
+	margin-bottom: 25px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.portfolio-circle {
+	width: 20px;
+	height: 20px;
+	background-color: $main-color;
+	margin-left: 15px;
+	border-radius: 100px;
+}
+
+.portfolio-name {
+	margin-top: 4px;
+	margin-left: 15px;
+	font-size: 25px;
+	text-transform: uppercase;
+	font-weight: 400;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.portfolio-desc {
+	margin-top: 4px;
+	margin-left: 40px;
+	font-size: 17px;
+	font-weight: 300;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.portfolio-img {
+	width: 50%;
+	height: 50%;
+	border-radius: 20px;
+}
+
+.portfolio-button {
+	display: flex;
+	margin-right: 50px;
+	height: 80px;
+	width: 250px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 40px;
+	border: 0px;
+	font-family: Lato;
+	font-weight: 500;
+	font-size: 25px;
+	background-color: #00b4d8;
+	color: white;
+
+	&:hover {
+		background-color: #0092af;
+		color: white;
 	}
 }

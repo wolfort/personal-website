@@ -1,74 +1,66 @@
-import React from 'react'
+import React, {useState} from "react";
 import { useSpring, animated } from "react-spring";
+import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 export default function Portfolio() {
 
     const props = useSpring({
-        from: { opacity: 0 },
-        to: { opacity: 1 }
+        from: { opacity: 0, width: '100%' },
+        to: { opacity: 1, width: '100%' }
         })
 
     return (
         <animated.div style={props}>
             <div class="portfolio-right-box">
-                <h2 class="main-color">Portfolio</h2>
-
-                <div class="portfolio-grid">
-
-                <li>
-                    <div class="portfolio-box">
-                        <img src="assets/mve-stream.png" alt="mve-stream" class="portfolio-example"></img>
-                        <a href="https://mve.gg/"><div class="portfolio-img-overlay"></div></a>
-                    </div>
-                    <div class="portoflio-name">
-                        <h3 class="main-color">Mighty Five Esports</h3>
-                    </div>
-                    <div class="portolio-desc">
-                        <p>Prowadzenie tranmisji na żywo</p>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="portfolio-box">
-                        <img src="assets/proliders.png" alt="proliders" class="portfolio-example"></img>
-                        <a href="https://www.proliders.pl/"><div class="portfolio-img-overlay"></div></a>
-                    </div>
-                    <div class="portoflio-name">
-                        <h3 class="main-color">Proliders</h3>
-                    </div>
-                    <div class="portolio-desc">
-                        <p>Strona internetowa</p>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="portfolio-box">
-                        <img src="assets/ativar.png" alt="ativar" class="portfolio-example"></img>
-                        <a href="https://www.facebook.com/ativarteam"><div class="portfolio-img-overlay"></div></a>
-                    </div>
-                    <div class="portoflio-name">
-                        <h3 class="main-color">AtiVar</h3>
-                    </div>
-                    <div class="portolio-desc">
-                        <p>Oprawa graficzna</p>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="portfolio-box">
-                        <img src="assets/ativar.png" alt="ativar" class="portfolio-example"></img>
-                        <a href="https://www.facebook.com/ativarteam"><div class="portfolio-img-overlay"></div></a>
-                    </div>
-                    <div class="portoflio-name">
-                        <h3 class="main-color">AtiVar</h3>
-                    </div>
-                    <div class="portolio-desc">
-                        <p>Oprawa graficzna</p>
-                    </div>
-                </li>
-                </div>
-
+                <h2 class="main-color tittle">Portfolio</h2>
+                {/* <div className="portfolio-box"> */}
+                {/* <div className="portfolio-list"> */}
+                <AnimateSharedLayout>   
+                    <motion.ul className="portfolio-list" layout initial={{ borderRadius: 25}}>
+                        {items.map(item => (
+                            <Item key={item} />
+                        ))}
+                    </motion.ul>
+                </AnimateSharedLayout>
+                {/* </div> */}
+                {/* </div> */}
             </div>
         </animated.div>
     )
+
+        
+    
 }
+
+function Item() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleOpen = () => setIsOpen(!isOpen);
+
+    return (
+        <motion.li className="portfolio-box" layout onClick={toggleOpen} initial={{ borderRadius: 50 }}>
+            <motion.div className="portfolio-box-top">
+                <motion.div className="portfolio-circle" layout />
+                <motion.h3 className="portfolio-name" layout>Proliders</motion.h3>
+                <motion.p className="portfolio-desc" layout>Strona internetowa</motion.p>
+            </motion.div>
+            <AnimatePresence>{isOpen && <Content />}</AnimatePresence>
+        </motion.li>
+    );
+}
+
+function Content() {
+    return (
+        <motion.div className="portfolio-box-bottom"
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, delay: 2 }}
+            exit={{ opacity: 0, delay: 2 }}
+        >
+            <img src="assets/proliders.png" className="portfolio-img"></img>
+            <button className="portfolio-button">WEJDŹ</button>
+        </motion.div>
+        );
+    }
+
+const items = [0, 1, 2];

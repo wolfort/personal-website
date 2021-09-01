@@ -6,8 +6,8 @@ import { useSpring, animated } from "react-spring";
 export default function Home() {
 
     const props = useSpring({
-        from: { opacity: 0 },
-        to: { opacity: 1 }
+        from: { opacity: 0, width: '100%' },
+        to: { opacity: 1, width: '100%' }
         })
 
 

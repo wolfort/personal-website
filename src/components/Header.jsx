@@ -5,7 +5,8 @@ export default function Header({ setPage_number, year }) {
     return (
         <div className="left-box">
         <div className="name-photo">
-            <img src="assets/photo.jpg" alt="avatar" className="myphoto"></img>
+            <div className="animated-border"></div>
+
             <h1 className="myname">Sebastian Wilczyński</h1>
             <h2 className="mydesc">Junior Frontend Developer</h2>
 

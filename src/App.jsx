@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import "./app.scss";
 import { IsMedium } from './components/Header'
 import { AnimatePresence, motion } from "framer-motion";
+import { useSpring, animated } from "react-spring";
 
 function App() {
 
@@ -22,13 +23,19 @@ const year = d.getFullYear();
 
 const medium = IsMedium();
 
-console.log(medium)
+const props = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 100,
+    config: {duration: 500}
+    })
+
 
 return (
     <div className="app">
         {/* Główny blok */}
         <div className="container">
-        <div className="box">
+        <animated.div style={props} className="box">
             {/* Ładowanie header'a */}
             <Header 
                 setPage_number={setPage_number}
@@ -42,9 +49,9 @@ return (
             <AnimatePresence>
                 { isOpenRight == true && (
                     <motion.div className="right-box"
-                    animate={ medium ? {width: "100%"} : {width: 1000} }
+                    animate={ medium ? {width: "100vw"} : {width: 1000} }
                     transition={{ duration: 2 }}
-                    exit={{ width: 0 }}
+                    exit={ medium ? {width: "100vw"} : {width: 0} }
                 >
                     <motion.div className="animation-right-box"
                     initial={{ opacity: 0, overflow: "hidden" }}
@@ -58,16 +65,16 @@ return (
                         {page_number == 3 && <Portfolio/>}
                     </motion.div>
                     <motion.div className="close-arrow"
-                    initial={{ rotate: 0, opacity: 0 }}
-                    animate={{ rotate: 180, opacity: 1, transition: { delay: 1} }}
-                    exit={{ rotate: 0, opacity: 0, transition: { delay: 0.5} }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { delay: 1} }}
+                    exit={{ opacity: 0, transition: { delay: 0.5} }}
                     >
-                        <i className="fas fa-chevron-right" onClick={function(){setIsOpenRight(false)}}></i>
+                        <i className="fas fa-chevron-left" onClick={function(){setIsOpenRight(false)}}></i>
                     </motion.div>
                 </motion.div>
                 )}
             </AnimatePresence>
-        </div>
+        </animated.div>
         </div>
     </div>
 );

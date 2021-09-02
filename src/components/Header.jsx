@@ -1,15 +1,22 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive'
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSpring, animated } from "react-spring";
 
-export const IsMedium = () => useMediaQuery({ query: '(max-width: 600px)' });
+export const IsMedium = () => useMediaQuery({ query: '(max-width: 1500px)' });
 
 export default function Header({ setPage_number, year, setIsOpenRight, isOpenRight, setIsOpenHeader, medium }) {
 
+const props = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 }
+    })
+
     return (
+        <animated.div style={props}>
         <AnimatePresence>
                 <motion.div className="left-box"
-                    animate={medium && isOpenRight ? {x: -700} : {} }
+                    animate={medium && isOpenRight ? {x: -1500} : {} }
                     transition={{ duration: 2 }}
                 >
                     <div className="name-photo">
@@ -56,5 +63,6 @@ export default function Header({ setPage_number, year, setIsOpenRight, isOpenRig
 
                 </motion.div>
         </AnimatePresence>
+        </animated.div>
     )
 }

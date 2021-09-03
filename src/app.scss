@@ -205,6 +205,10 @@ nav {
 	overflow-y: scroll;
 	font-size: 34px;
 	margin-right: 15px;
+
+	i {
+		position: fixed;
+	}
 }
 
 // Home
@@ -386,7 +390,6 @@ nav {
 
 .portfolio-img {
 	width: 393.562px;
-
 	border-radius: 21px;
 }
 
@@ -418,10 +421,13 @@ nav {
 	.right-box {
 		width: 100%;
 		height: 100%;
+		flex-direction: column;
 		.animation-right-box {
 			width: 100%;
+			order: 2;
 		}
 	}
+
 
 	.home-right {
 		width: 100vw;
@@ -439,11 +445,17 @@ nav {
 	}
 
 	.close-arrow {
-		display: block;
-		position: absolute;
-		margin-right: 0px;
-		right: 15px;
-		top: 30px;
+		justify-content: flex-end;
+		width: 100vw;
+		height: 65px;
+		top: 0px;
+		order: 1;
+		position: fixed;
+		background-color: #201e1f;
+
+		i {
+			padding-right: 30px;
+		}
 	}
 	.about-me-right-box {
 		padding-top: 80px;

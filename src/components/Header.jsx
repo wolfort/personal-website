@@ -50,9 +50,9 @@ const props = useSpring({
                     <nav>
                         <h2 className="menu-name">Menu</h2>
                         <ul className="main-li">
-                            <li id="main-page" ><a href="#" onClick={function(){setIsOpenRight(true); setIsOpenHeader(false); setPage_number("1")}}>Strona główna</a></li>
-                            <li id="about-me" ><a href="#" onClick={function(){setIsOpenRight(true); setIsOpenHeader(false); setPage_number("2")}}>O mnie</a></li>
-                            <li id="portfolio" ><a href="#" onClick={function(){setIsOpenRight(true); setIsOpenHeader(false); setPage_number("3")}}>Portfolio</a></li>
+                            <li id="main-page" ><a href="#" onClick={function(){setIsOpenRight(true); setPage_number("1")}}>Strona główna</a></li>
+                            <li id="about-me" ><a href="#" onClick={function(){setIsOpenRight(true); setPage_number("2")}}>O mnie</a></li>
+                            <li id="portfolio" ><a href="#" onClick={function(){setIsOpenRight(true); setPage_number("3")}}>Portfolio</a></li>
                             <li><a href="#">Kontakt</a></li>
                         </ul>
                     </nav>

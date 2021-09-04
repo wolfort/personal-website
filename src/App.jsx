@@ -15,8 +15,6 @@ let [page_number, setPage_number] = useState("2");
 
 let [isOpenRight, setIsOpenRight] = useState(false);
 
-let [isOpenHeader, setIsOpenHeader] = useState(false);
-
 // oblicza rok
 var d = new Date();
 const year = d.getFullYear();
@@ -42,7 +40,6 @@ return (
                 year={year}
                 setIsOpenRight={setIsOpenRight}
                 isOpenRight={isOpenRight}
-                setIsOpenHeader={setIsOpenHeader}
                 medium={medium}
             />
 

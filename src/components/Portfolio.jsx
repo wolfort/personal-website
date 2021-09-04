@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import { useSpring, animated } from "react-spring";
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { motion } from 'framer-motion';
 
 export default function Portfolio() {
 
@@ -16,19 +16,31 @@ export default function Portfolio() {
                 <h2 class="main-color tittle">Portfolio</h2>
                 <div className="portfolio-box">
                     <div className="portfolio-content">
-                        <img className="portfolio-img" src="assets/proliders.png"></img>
-                        <h3>Proliders</h3>
-                        <p>Strona internetowa</p>
+                        <div className="portfolio-shape-left">
+                            <a href="https://www.proliders.pl/"><motion.img whileHover={{ scale: 1.05 }} className="portfolio-img" src="assets/proliders.png"></motion.img></a>
+                        </div>
+                        <div className="portfolio-text-right">
+                            <h3>Proliders</h3>
+                            <p>Strona została wykonana za pomocą React'a. Firma zajmuje się kompleksowym myciem i decynfekcją zakładów przetwórstwa spożywczego.</p>
+                        </div>
                     </div>
                     <div className="portfolio-content">
-                        <img className="portfolio-img" src="assets/proliders.png"></img>
-                        <h3>Proliders</h3>
-                        <p>Strona internetowa</p>
+                        <div className="portfolio-text-left">
+                            <h3>Mighty Five</h3>
+                            <p>Realizacja transmisji na żywo.<br></br>Przez około rok zajmowałem się realizacją transmisji z wydarzeń esportowych. Korzystałem głównie z programu vMix.</p>
+                        </div>
+                        <div className="portfolio-shape-right">
+                            <a href="https://youtu.be/OK4-Do_owAY?t=302"><motion.img whileHover={{ scale: 1.05 }} className="portfolio-img" src="assets/mve-stream.png"></motion.img></a>
+                        </div>
                     </div>
                     <div className="portfolio-content">
-                        <img className="portfolio-img" src="assets/proliders.png"></img>
-                        <h3>Proliders</h3>
-                        <p>Strona internetowa</p>
+                        <div className="portfolio-shape-left">
+                            <a href="https://www.facebook.com/ativarteam"><motion.img whileHover={{ scale: 1.05 }} className="portfolio-img" src="assets/ativar.png"></motion.img></a>
+                        </div>
+                        <div className="portfolio-text-right">
+                            <h3>Ativar</h3>
+                            <p>Tworzenie oprawy graficznej.<br></br>Na początku 2019 roku zajmowałem się tworzeniem grafik dla pewnej organizacji esportowej. Korzystałem głównie z programu Adobe Photoshop.</p>
+                        </div>
                     </div>
                 </div>
             </div>

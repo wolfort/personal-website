@@ -1,6 +1,8 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 import { motion } from 'framer-motion';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function Portfolio() {
 
@@ -17,7 +19,7 @@ export default function Portfolio() {
                 <div className="portfolio-box">
                     <div className="portfolio-content">
                         <div className="portfolio-shape-left">
-                            <a href="https://www.proliders.pl/"><motion.img whileHover={{ scale: 1.05 }} className="portfolio-img" src="assets/proliders.png"></motion.img></a>
+                            <motion.a whileHover={{ scale: 1.05 }} href="https://www.proliders.pl/"><LazyLoadImage effect="blur" className="portfolio-img" src="assets/proliders.png"/></motion.a>
                         </div>
                         <div className="portfolio-text-right">
                             <h3>Proliders</h3>
@@ -30,12 +32,12 @@ export default function Portfolio() {
                             <p>Realizacja transmisji na żywo.<br></br>Przez około rok zajmowałem się realizacją transmisji z wydarzeń esportowych. Korzystałem głównie z programu vMix.</p>
                         </div>
                         <div className="portfolio-shape-right">
-                            <a href="https://youtu.be/OK4-Do_owAY?t=302"><motion.img whileHover={{ scale: 1.05 }} className="portfolio-img" src="assets/mve-stream.png"></motion.img></a>
+                            <motion.a whileHover={{ scale: 1.05 }} href="https://youtu.be/OK4-Do_owAY?t=302"><LazyLoadImage effect="blur" whileHover={{ scale: 1.05 }} className="portfolio-img" src="assets/mve-stream.png"/></motion.a>
                         </div>
                     </div>
                     <div className="portfolio-content">
                         <div className="portfolio-shape-left">
-                            <a href="https://www.facebook.com/ativarteam"><motion.img whileHover={{ scale: 1.05 }} className="portfolio-img" src="assets/ativar.png"></motion.img></a>
+                            <motion.a whileHover={{ scale: 1.05 }} href="https://www.facebook.com/ativarteam"><LazyLoadImage effect="blur" whileHover={{ scale: 1.05 }} className="portfolio-img" src="assets/ativar.png"/></motion.a>
                         </div>
                         <div className="portfolio-text-right">
                             <h3>Ativar</h3>

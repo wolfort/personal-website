@@ -7,8 +7,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 export default function Contact() {
 
     const props = useSpring({
-        from: { opacity: 0, width: '100vw' },
-        to: { opacity: 1, width: '100vw' }
+        from: { opacity: 0, width: '100%' },
+        to: { opacity: 1, width: '100%' }
         })
 
         const formId = 'OcjayoUm';

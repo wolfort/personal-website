@@ -3,6 +3,7 @@ import AboutMe from "./components/AboutMe";
 import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
 import Header from "./components/Header";
+import Contact from "./components/Contact";
 import "./app.scss";
 import { IsMedium } from './components/Header'
 import { AnimatePresence, motion } from "framer-motion";
@@ -60,6 +61,7 @@ return (
                             year={year}
                         />}
                         {page_number == 3 && <Portfolio/>}
+                        {page_number == 4 && <Contact/>}
                     </motion.div>
                     <motion.div className="close-arrow"
                     initial={{ opacity: 0 }}
